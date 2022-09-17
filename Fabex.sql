@@ -9,34 +9,34 @@ USE Fabex;
 /*Utworzenie tabeli Lokalizacje.*/
 
 CREATE TABLE Lokalizacje 
-(Id int NOT NULL AUTO_INCREMENT, 
-Ulica varchar(255), 
-Adres varchar(6), 
-Miasto varchar(255), 
+(Id INT NOT NULL AUTO_INCREMENT, 
+Ulica VARCHAR(255), 
+Adres VARCHAR(6), 
+Miasto VARCHAR(255), 
 PRIMARY KEY (id)
 );
 
 /*Utworzenie tabeli Stanowiska.*/
 
 CREATE TABLE Stanowiska 
-(Id int NOT NULL AUTO_INCREMENT,
- Zawód varchar(255),
- Min_Pensja int,
- Max_Pensja int,
+(Id INT NOT NULL AUTO_INCREMENT,
+ Zawód VARCHAR(255),
+ Min_Pensja INT,
+ Max_Pensja INT,
  PRIMARY KEY (id)
  );
 
 /*Utworzenie tabeli Pracownicy.*/
 
 CREATE TABLE Pracownicy 
-(Id int NOT NULL AUTO_INCREMENT, 
-Imię varchar(255), 
-Nazwisko varchar(255), 
-Email varchar(255), 
-Data_Urodzenia datetime, 
-Data_Zatrudnienia datetime, 
-Stanowiska_Id int NOT NULL, 
-Lokalizacje_Id int NOT NULL, 
+(Id INT NOT NULL AUTO_INCREMENT, 
+Imię VARCHAR(255), 
+Nazwisko VARCHAR(255), 
+Email VARCHAR(255), 
+Data_Urodzenia DATETIME, 
+Data_Zatrudnienia DATETIME, 
+Stanowiska_Id INT NOT NULL, 
+Lokalizacje_Id INT NOT NULL, 
 PRIMARY KEY (Id), 
 FOREIGN KEY (Stanowiska_Id) REFERENCES Stanowiska(Id), 
 FOREIGN KEY (Lokalizacje_Id) REFERENCES Lokalizacje(Id)
